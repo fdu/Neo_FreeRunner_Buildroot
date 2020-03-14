@@ -35,6 +35,10 @@ $ make flash_rootfs
 Changelog
 ---------
 
+* 0.2
+  * Buildroot 2020.02
+  * Linux 3.2.99
+  * GCC 5.5.0
 * 0.1
   * Buildroot 2019.02
   * Linux 2.6.37
