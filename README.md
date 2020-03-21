@@ -43,9 +43,11 @@ Support
 
 :x: Build boot loader
 
-:heavy_check_mark: Display (console in frame buffer)
+:heavy_check_mark: Display (console in frame buffer `/dev/fb0`)
 
-:x: Display (Xorg)
+:heavy_check_mark: Display (Xorg with fbdev, tested with fluxbox)
+
+:heavy_check_mark: Touch screen (`/dev/input/mouse0` output, also working under Xorg)
 
 :heavy_check_mark: Backlight control
 
@@ -57,7 +59,7 @@ Support
 
 :question: Bluetooth
 
-:heavy_plus_sign: GPS (NMEA messages coming in, no fix)
+:heavy_plus_sign: GPS (NMEA messages coming on `/dev/s3c2410_serial1`, no fix)
 
 :question: SD card
 
@@ -67,7 +69,7 @@ Support
 
 :question: GPRS
 
-:question: Buttons
+:heavy_check_mark: Buttons (AUX on `/dev/input/event0`, power on `/dev/input/event2`)
 
 :heavy_plus_sign: Device power management (wifi, others not tested)
 
