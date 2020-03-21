@@ -35,6 +35,12 @@ $ make flash_rootfs
 Changelog
 ---------
 
+* next
+  * Buildroot 2019.02
+  * Linux 2.6.37
+  * GCC 4.9.4
+  * Added [omhacks](https://github.com/radekp/omhacks)
+  * Added network configuration for usb0 and eth0
 * 0.2
   * Buildroot 2020.02
   * Linux 3.2.99

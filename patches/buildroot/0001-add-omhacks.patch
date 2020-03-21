@@ -1,0 +1,10 @@
+--- buildroot/package/Config.in	2020-03-21 10:28:40.887969571 +0100
++++ buildroot/package/Config.in.new	2020-03-21 10:28:50.240116283 +0100
+@@ -2159,6 +2159,7 @@
+ 	source "package/ncdu/Config.in"
+ 	source "package/numactl/Config.in"
+ 	source "package/nut/Config.in"
++	source "package/omhacks/Config.in"
+ 	source "package/openvmtools/Config.in"
+ 	source "package/pamtester/Config.in"
+ 	source "package/polkit/Config.in"

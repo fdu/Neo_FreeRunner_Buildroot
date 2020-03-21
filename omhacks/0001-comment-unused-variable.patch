@@ -1,0 +1,34 @@
+From 822aba0a69da167926702c38af8d119615892d61 Mon Sep 17 00:00:00 2001
+From: Your Name <you@example.com>
+Date: Fri, 20 Mar 2020 22:30:24 +0100
+Subject: [PATCH] comment unused variable
+
+---
+ omhacks/sysfs.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/omhacks/sysfs.c b/omhacks/sysfs.c
+index 96637c7..f3a50fa 100644
+--- a/omhacks/sysfs.c
++++ b/omhacks/sysfs.c
+@@ -246,7 +246,7 @@ const char* om_sysfs_path(const char* name)
+ const char* om_sysfs_readfile(const char* pathname)
+ {
+ 	static char buf[1024];
+-	const char* res = NULL;
++//	const char* res = NULL;
+ 	ssize_t count;
+ 	int fd = -1;
+ 	fd = open(pathname, O_RDONLY);
+@@ -254,7 +254,7 @@ const char* om_sysfs_readfile(const char* pathname)
+ 	count = read(fd, buf, 1023);
+ 	if (count < 0) goto cleanup;
+ 	buf[count] = 0;
+-	res = buf;
++//	res = buf;
+ 
+ cleanup:
+ 	if (fd >= 0) close(fd);
+-- 
+2.25.2
+

@@ -1,0 +1,4 @@
+config BR2_PACKAGE_OMHACKS
+  bool "omhacks"
+  help
+    It is a fast and simple library of common openmoko utility functions.
