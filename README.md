@@ -32,6 +32,59 @@ $ make flash_kernel
 $ make flash_rootfs
 ```
 
+Support
+-------
+
+:heavy_check_mark: Build kernel
+
+:heavy_check_mark: Build root file system (JFFS2 in flash)
+
+:x: Build root file system (SD card)
+
+:x: Build boot loader
+
+:heavy_check_mark: Display (console in frame buffer `/dev/fb0`)
+
+:heavy_check_mark: Display (Xorg with `xdriver_xf86-video-fbdev`, tested with fluxbox)
+
+:heavy_check_mark: Touch screen (`/dev/input/mouse0` output, also working under Xorg)
+
+:heavy_check_mark: Backlight control
+
+:question: USB host
+
+:heavy_check_mark: USB gadget (Ethernet)
+
+:heavy_check_mark: Wifi (WPA2/PSK)
+
+:question: Bluetooth
+
+:heavy_plus_sign: GPS (NMEA messages coming on `/dev/s3c2410_serial1`, no fix)
+
+:question: SD card
+
+:question: 3D accelerometers
+
+:heavy_check_mark: LEDs
+
+:question: GPRS
+
+:heavy_check_mark: Buttons (AUX on `/dev/input/event0`, power on `/dev/input/event2`)
+
+:heavy_plus_sign: Device power management (wifi, others not tested)
+
+:question: Suspend / resume
+
+:question: Watchdog
+
+:question: Real-time clock
+
+:question: Audio on jack
+
+:question: Audio on speaker
+
+:question: Microphone
+
 Changelog
 ---------
 
