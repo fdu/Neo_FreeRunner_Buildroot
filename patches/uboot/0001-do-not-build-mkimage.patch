@@ -1,0 +1,25 @@
+From 137be62e0b8662d64223fe526449a777d3cbb32d Mon Sep 17 00:00:00 2001
+From: Your Name <you@example.com>
+Date: Sat, 21 Mar 2020 22:47:07 +0100
+Subject: [PATCH] do not build mkimage
+
+---
+ tools/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tools/Makefile b/tools/Makefile
+index 4dd9d4ff..0717cead 100644
+--- a/tools/Makefile
++++ b/tools/Makefile
+@@ -21,7 +21,7 @@
+ # MA 02111-1307 USA
+ #
+ 
+-BIN_FILES	= img2srec$(SFX) mkimage$(SFX) envcrc$(SFX) ubsha1$(SFX) gen_eth_addr$(SFX) bmp_logo$(SFX) mkudfu$(SFX)
++BIN_FILES	= img2srec$(SFX) envcrc$(SFX) ubsha1$(SFX) gen_eth_addr$(SFX) bmp_logo$(SFX) mkudfu$(SFX)
+ 
+ OBJ_LINKS	= environment.o crc32.o md5.o sha1.o image.o
+ OBJ_FILES	= img2srec.o mkimage.o envcrc.o ubsha1.o gen_eth_addr.o bmp_logo.o mkudfu.o
+-- 
+2.25.2
+

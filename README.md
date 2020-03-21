@@ -59,7 +59,7 @@ The IP configuration for the USB gadget ethernet interface resides in `overlay/e
 
 :heavy_check_mark: Build root file system (SD card)
 
-:x: Build boot loader
+:heavy_plus_sign: Build boot loader
 
 :heavy_check_mark: Display (console in frame buffer `/dev/fb0`)
 
