@@ -39,7 +39,7 @@ Support
 
 :heavy_check_mark: Build root file system (JFFS2 in flash)
 
-:x: Build root file system (SD card)
+:heavy_check_mark: Build root file system (SD card)
 
 :x: Build boot loader
 
