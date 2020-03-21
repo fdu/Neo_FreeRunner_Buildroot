@@ -35,7 +35,7 @@ $ make flash_rootfs
 
 The SD card partitioning is described [Booting the Neo FreeRunner from SD via U-Boot](http://wiki.openmoko.org/wiki/Booting_the_Neo_FreeRunner_from_SD_via_U-Boot).
 
-The kernel must be copied from `buildroot/output/images/uImage` to the first SD card partition (FAT) under the name `uImage.bin`. The content of the root file system archive `buildroot/output/images/rootfs.tar.gz` must be extracted in the second SD card partition (ext3).
+The kernel must be copied from `buildroot/output/images/uImage` to the first SD card partition (FAT) under the name `uImage.bin`. The content of the root file system archive `buildroot/output/images/rootfs.tar.gz` must be extracted in the second SD card partition (ext2).
 
 ## Configure
 
