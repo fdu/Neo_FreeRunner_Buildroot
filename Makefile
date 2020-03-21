@@ -13,6 +13,7 @@ bootstrap:
 	cp $(dir_configs)/buildroot $(dir_buildroot)/.config
 	ln -s `pwd`/omhacks $(dir_buildroot)/package/omhacks
 	patch -p0 < $(dir_patches)/buildroot/0001-add-omhacks.patch
+	patch -p0 < $(dir_patches)/buildroot/0002-fbdev-5.0.patch
 
 build:
 	$(MAKE) -j`nproc` -C $(dir_buildroot)
