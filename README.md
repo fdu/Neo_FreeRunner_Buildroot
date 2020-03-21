@@ -45,7 +45,7 @@ Support
 
 :heavy_check_mark: Display (console in frame buffer `/dev/fb0`)
 
-:heavy_check_mark: Display (Xorg with fbdev, tested with fluxbox)
+:heavy_check_mark: Display (Xorg with `xdriver_xf86-video-fbdev`, tested with fluxbox)
 
 :heavy_check_mark: Touch screen (`/dev/input/mouse0` output, also working under Xorg)
 
