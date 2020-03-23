@@ -21,9 +21,9 @@ After the build, the directory `buildroot/output/images/` contains
  - the Linux kernel image for U-Boot `uImage`
  - the JFFS2 root file system for the NAND `rootfs.jffs2`
 
-## Run
+## Flash the system
 
-### From the internal flash
+### Internal NAND flash
 
 The images can be flashed with dfu-util by following with standard [Neo FreeRunner flashing instructions](http://wiki.openmoko.org/wiki/Flashing_the_Neo_FreeRunner) or by using:
 
@@ -31,13 +31,19 @@ The images can be flashed with dfu-util by following with standard [Neo FreeRunn
 $ make flash
 ```
 
-### From a SD card
+### SD card
 
-The SD card partitioning is described [Booting the Neo FreeRunner from SD via U-Boot](http://wiki.openmoko.org/wiki/Booting_the_Neo_FreeRunner_from_SD_via_U-Boot).
+The SD card partitioning is described in [Booting the Neo FreeRunner from SD via U-Boot](http://wiki.openmoko.org/wiki/Booting_the_Neo_FreeRunner_from_SD_via_U-Boot).
 
 The kernel must be copied from `buildroot/output/images/uImage` to the first SD card partition (FAT) under the name `uImage.bin`. The content of the root file system archive `buildroot/output/images/rootfs.tar.gz` must be extracted in the second SD card partition (ext2).
 
-## Configure
+## Run
+
+To boot U-Boot just flashed into the NAND above, press and hold Power button then while still pressing the Power button, press and hold AUX button for 5 to 8 seconds. To boot U-Boot from the NOR, press and hold the AUX button, while still pressing the AUX button, press and hold the Power button, then release the AUX button.
+
+See complete instructions in [Booting the Neo FreeRunner via U-Boot](http://wiki.openmoko.org/wiki/Booting_the_Neo_FreeRunner_via_U-Boot).
+
+## Configure a custom build
 
 ### Packages
 
