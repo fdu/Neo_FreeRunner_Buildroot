@@ -14,21 +14,19 @@ bootstrap:
 	ln -s `pwd`/omhacks $(dir_buildroot)/package/omhacks
 	patch -p0 < $(dir_patches)/buildroot/0001-add-omhacks.patch
 	patch -p0 < $(dir_patches)/buildroot/0002-fbdev-5.0.patch
+	patch -p0 < $(dir_patches)/buildroot/0003-uboot-udfu.patch
 
 build:
 	$(MAKE) -j`nproc` -C $(dir_buildroot)
 
-flash_kernel:
+flash:
 ifeq (, $(shell which dfu-util))
 	$(error "No dfu-util in path $(PATH)")
 else
+	dfu-util -a u-boot -R -D $(dir_buildroot)/output/images/u-boot.udfu
+	sleep 2
 	dfu-util -a kernel -R -D $(dir_buildroot)/output/images/uImage
-endif
-
-flash_rootfs:
-ifeq (, $(shell which dfu-util))
-	$(error "No dfu-util in path $(PATH)")
-else
+	sleep 2
 	dfu-util -a rootfs -R -D $(dir_buildroot)/output/images/rootfs.jffs2
 endif
 

@@ -17,7 +17,8 @@ $ make build
 ```
 
 After the build, the directory `buildroot/output/images/` contains 
- - the kernel image for U-Boot `uImage`
+ - the U-Boot image `u-boot.udfu`
+ - the Linux kernel image for U-Boot `uImage`
  - the JFFS2 root file system for the NAND `rootfs.jffs2`
 
 ## Run
@@ -27,8 +28,7 @@ After the build, the directory `buildroot/output/images/` contains
 The images can be flashed with dfu-util by following with standard [Neo FreeRunner flashing instructions](http://wiki.openmoko.org/wiki/Flashing_the_Neo_FreeRunner) or by using:
 
 ```
-$ make flash_kernel
-$ make flash_rootfs
+$ make flash
 ```
 
 ### From a SD card
@@ -59,7 +59,7 @@ The IP configuration for the USB gadget ethernet interface resides in `overlay/e
 
 :heavy_check_mark: Build root file system (SD card)
 
-:heavy_plus_sign: Build boot loader
+:heavy_check_mark: Build boot loader
 
 :heavy_check_mark: Display (console in frame buffer `/dev/fb0`)
 
@@ -112,6 +112,7 @@ The IP configuration for the USB gadget ethernet interface resides in `overlay/e
   * Added [omhacks](https://github.com/radekp/omhacks)
   * Added network configuration for usb0 and eth0
   * Fixed dependencies for Xorg and fluxbox window manager
+  * Add U-Boot build
 * 0.2
   * Buildroot 2020.02
   * Linux 3.2.99

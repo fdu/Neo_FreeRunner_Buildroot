@@ -1,0 +1,28 @@
+diff -Naur buildroot/boot/uboot/Config.in buildroot/boot/uboot.new/Config.in
+--- buildroot/boot/uboot/Config.in	2020-03-22 22:24:23.476899746 +0100
++++ buildroot/boot/uboot.new/Config.in	2020-03-22 22:20:35.805226399 +0100
+@@ -322,6 +322,9 @@
+ 	  Example:
+ 	  u-boot_magic.bin
+ 
++config BR2_TARGET_UBOOT_FORMAT_UDFU
++	bool "u-boot.udfu"
++
+ endmenu
+ 
+ config BR2_TARGET_UBOOT_OMAP_IFT
+diff -Naur buildroot/boot/uboot/uboot.mk buildroot/boot/uboot.new/uboot.mk
+--- buildroot/boot/uboot/uboot.mk	2020-03-22 22:24:23.476899746 +0100
++++ buildroot/boot/uboot.new/uboot.mk	2020-03-22 22:19:47.514444508 +0100
+@@ -110,6 +110,11 @@
+ UBOOT_DEPENDENCIES += host-elftosb host-openssl
+ endif
+ 
++ifeq ($(BR2_TARGET_UBOOT_FORMAT_UDFU),y)
++UBOOT_BINS += u-boot.udfu
++UBOOT_MAKE_TARGET += u-boot.udfu
++endif
++
+ ifeq ($(BR2_TARGET_UBOOT_FORMAT_CUSTOM),y)
+ UBOOT_BINS += $(call qstrip,$(BR2_TARGET_UBOOT_FORMAT_CUSTOM_NAME))
+ endif
