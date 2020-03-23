@@ -61,6 +61,8 @@ The IP configuration for the USB gadget ethernet interface resides in `overlay/e
 
 :heavy_check_mark: Build boot loader
 
+:question: Boot loader splash screen
+
 :heavy_check_mark: Display (console in frame buffer `/dev/fb0`)
 
 :heavy_check_mark: Display (Xorg with `xdriver_xf86-video-fbdev`, tested with fluxbox)
@@ -102,6 +104,38 @@ The IP configuration for the USB gadget ethernet interface resides in `overlay/e
 :question: Audio on speaker
 
 :question: Microphone
+
+## Unsolved issues
+
+### Wrong kernel configuration
+
+The kernel configuration is overwritten during the buildroot run, which leqds to a built kernel not matching the configuration under `̀configs/kernel`. To rebuild the kernel with the correct configuration, run:
+
+```
+$ cp configs/kernel buildroot/output/build/linux-om-gta02-2.6.37/.config
+$ make build
+```
+### First buildroot build fails
+
+The first build fails, other builds succeed:
+
+```
+$ make build
+which: no dfu-util in (/home/clear/bin:/home/clear/bin:/usr/local/bin:/usr/bin/haswell:/usr/bin:/opt/3rd-party/bin)
+make -j`nproc` -C buildroot
+make[1]: Entering directory '/share/freerunner/temp/buildroot'
+make[1]: *** No rule to make target '/share/freerunner/temp/buildroot/output/.br-external.mk'.  Stop.
+make[1]: Leaving directory '/share/freerunner/temp/buildroot'
+make: *** [Makefile:20: build] Error 2
+$ make build
+which: no dfu-util in (/home/clear/bin:/home/clear/bin:/usr/local/bin:/usr/bin/haswell:/usr/bin:/opt/3rd-party/bin)
+make -j`nproc` -C buildroot
+make[1]: Entering directory '/share/freerunner/temp/buildroot'
+/usr/bin/make -j1 O=/share/freerunner/temp/buildroot/output HOSTCC="/usr/bin/gcc" HOSTCXX="/usr/bin/g++" syncconfig
+make[2]: Entering directory '/share/freerunner/temp/buildroot'
+make[2]: warning: -j1 forced in submake: resetting jobserver mode.
+...
+```
 
 ## Changelog
 
