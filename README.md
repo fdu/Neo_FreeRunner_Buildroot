@@ -87,7 +87,7 @@ The IP configuration for the USB gadget ethernet interface resides in `overlay/e
 
 :heavy_plus_sign: GPS (NMEA messages coming on `/dev/s3c2410_serial1`, no fix)
 
-:question: SD card
+:heavy_check_mark: SD card
 
 :question: 3D accelerometers
 
