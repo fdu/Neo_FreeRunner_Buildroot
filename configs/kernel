@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux/arm 2.6.37 Kernel Configuration
-# Sat Mar 21 11:28:04 2020
+# Mon Mar 23 20:30:33 2020
 #
 CONFIG_ARM=y
 CONFIG_HAVE_PWM=y
@@ -61,7 +61,8 @@ CONFIG_SYSVIPC_SYSCTL=y
 CONFIG_TINY_RCU=y
 # CONFIG_PREEMPT_RCU is not set
 # CONFIG_TREE_RCU_TRACE is not set
-# CONFIG_IKCONFIG is not set
+CONFIG_IKCONFIG=y
+CONFIG_IKCONFIG_PROC=y
 CONFIG_LOG_BUF_SHIFT=18
 # CONFIG_CGROUPS is not set
 CONFIG_NAMESPACES=y
