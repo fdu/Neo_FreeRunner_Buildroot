@@ -4,6 +4,7 @@ dir_download = downloads
 dir_configs = configs
 dir_buildroot = buildroot
 dir_patches = patches
+dir_splash = splash
 
 bootstrap:
 	mkdir -p $(dir_download)
@@ -29,6 +30,14 @@ else
 	sleep 2
 	dfu-util -a rootfs -R -D $(dir_buildroot)/output/images/rootfs.jffs2
 endif
+
+splash:
+	mkdir -p $(dir_splash)
+	curl http://wiki.openmoko.org/images/c/c2/System_boot.png > $(dir_splash)/System_boot.png
+	curl https://raw.githubusercontent.com/openmoko/openmoko-svn/master/src/host/splash/splashimg.pl > $(dir_splash)/splashimg.pl
+	chmod +x $(dir_splash)/splashimg.pl
+	$(dir_splash)/splashimg.pl $(dir_splash)/System_boot.png | gzip -9 > $(dir_splash)/splash
+	dfu-util -a splash -R -D $(dir_splash)/splash
 
 clean:
 	rm -rf $(dir_buildroot) $(dir_download)
