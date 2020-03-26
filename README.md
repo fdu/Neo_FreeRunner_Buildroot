@@ -171,7 +171,9 @@ make[2]: warning: -j1 forced in submake: resetting jobserver mode.
   * Added [omhacks](https://github.com/radekp/omhacks)
   * Added network configuration for usb0 and eth0
   * Fixed dependencies for Xorg and fluxbox window manager
-  * Add U-Boot build
+  * Added U-Boot build
+  * Added SD card image generation
+  * Added U-Boot splash screen
 * 0.2
   * Buildroot 2020.02
   * Linux 3.2.99
