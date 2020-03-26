@@ -53,6 +53,23 @@ The image content can be configured in Buildroot with:
 $ make -C buildroot/ menuconfig
 ```
 
+### Boot loader splash screen
+
+To generate an OpenMoko splash screen in the correct format:
+
+```
+$ make splash
+```
+
+Then add the `splashimage` variable to the NAND U-Boot:
+
+```
+setenv splashimage nand read.e 0x32000000 splash 0x5000\; unzip 0x32000000 0x8800000 0x96000 
+saveenv 
+```
+
+See complete instructions in [Configuring the boot splash screens](http://wiki.openmoko.org/wiki/Configuring_the_boot_splash_screens#U-Boot_Splash).
+
 ### Network
 
 The IP configuration for the USB gadget ethernet interface resides in `overlay/etc/network/interfaces`. A custom SSID and PSK for the wifi can be added in `overlay/etc/wpa_supplicant.conf`.
@@ -67,7 +84,7 @@ The IP configuration for the USB gadget ethernet interface resides in `overlay/e
 
 :heavy_check_mark: Build boot loader
 
-:question: Boot loader splash screen
+:heavy_check_mark: Boot loader splash screen
 
 :heavy_check_mark: Display (console in frame buffer `/dev/fb0`)
 
