@@ -68,7 +68,7 @@ setenv splashimage nand read.e 0x32000000 splash 0x5000\; unzip 0x32000000 0x880
 saveenv 
 ```
 
-The source PNG file should not contain an alpha channel (should be RGB, not RGBA). The `file` command gives `PNG image data, 480 x 640, 8-bit/color RGB, non-interlaced`. With the default `splashimage` variable, the maximum compressed splash size is 0x5000 which is 20480 bytes. The file should be smaller than that or the size increase in the U-Boot read command.
+This `splashimage` command loads a maximum compressed splash size of 0x5000 which is 20480 bytes. The file should be smaller than that or the size increase in the U-Boot read command.
 
 See complete instructions in [Configuring the boot splash screens](http://wiki.openmoko.org/wiki/Configuring_the_boot_splash_screens#U-Boot_Splash).
 
