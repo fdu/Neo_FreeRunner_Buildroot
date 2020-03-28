@@ -85,7 +85,7 @@ The IP configuration for the USB gadget ethernet interface resides in `overlay/e
 
 :question: Bluetooth
 
-:heavy_plus_sign: GPS (NMEA messages coming on `/dev/s3c2410_serial1`, no fix)
+:heavy_check_mark: GPS (NMEA messages coming on `/dev/s3c2410_serial1`, gpsd working)
 
 :heavy_check_mark: SD card
 
