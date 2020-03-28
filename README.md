@@ -53,6 +53,25 @@ The image content can be configured in Buildroot with:
 $ make -C buildroot/ menuconfig
 ```
 
+### Boot loader splash screen
+
+To generate an OpenMoko splash screen in the correct format:
+
+```
+$ make splash
+```
+
+Then add the `splashimage` variable to the NAND U-Boot:
+
+```
+setenv splashimage nand read.e 0x32000000 splash 0x5000\; unzip 0x32000000 0x8800000 0x96000 
+saveenv 
+```
+
+This `splashimage` command loads a maximum compressed splash size of 0x5000 which is 20480 bytes. The file should be smaller than that or the size increase in the U-Boot read command.
+
+See complete instructions in [Configuring the boot splash screens](http://wiki.openmoko.org/wiki/Configuring_the_boot_splash_screens#U-Boot_Splash).
+
 ### Network
 
 The IP configuration for the USB gadget ethernet interface resides in `overlay/etc/network/interfaces`. A custom SSID and PSK for the wifi can be added in `overlay/etc/wpa_supplicant.conf`.
@@ -67,7 +86,7 @@ The IP configuration for the USB gadget ethernet interface resides in `overlay/e
 
 :heavy_check_mark: Build boot loader
 
-:question: Boot loader splash screen
+:heavy_check_mark: Boot loader splash screen
 
 :heavy_check_mark: Display (console in frame buffer `/dev/fb0`)
 
@@ -152,7 +171,9 @@ make[2]: warning: -j1 forced in submake: resetting jobserver mode.
   * Added [omhacks](https://github.com/radekp/omhacks)
   * Added network configuration for usb0 and eth0
   * Fixed dependencies for Xorg and fluxbox window manager
-  * Add U-Boot build
+  * Added U-Boot build
+  * Added SD card image generation
+  * Added U-Boot splash screen
 * 0.2
   * Buildroot 2020.02
   * Linux 3.2.99
