@@ -118,9 +118,7 @@ The IP configuration for the USB gadget ethernet interface resides in `overlay/e
 
 :heavy_plus_sign: Device power management (wifi, others not tested)
 
-:question: Suspend / resume
-
-:question: Watchdog
+:heavy_check_mark: Suspend to RAM (suspend with `echo mem > /sys/power/state`, resume with power button)
 
 :question: Real-time clock
 
