@@ -122,9 +122,9 @@ The IP configuration for the USB gadget ethernet interface resides in `overlay/e
 
 :question: Real-time clock
 
-:question: Audio on jack
+:heavy_check_mark: Audio on headset (`alsactl restore -f /etc/alsa/headset.state`)
 
-:question: Audio on speaker
+:heavy_check_mark: Audio on speaker (`alsactl restore -f /etc/alsa/speaker.state`)
 
 :question: Microphone
 
