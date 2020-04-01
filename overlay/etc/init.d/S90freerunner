@@ -1,0 +1,54 @@
+#!/bin/sh
+
+start() {
+  echo "Starting Neo Freerunner resources: "
+  set -- $(cat /proc/cmdline)
+  for x in "$@"; do
+    case "$x" in
+      bootusb=*)
+      echo -ne "  Setting USB mode to ${x#bootusb=}... "
+      om usb mode ${x#bootusb=}
+      echo "done"
+      ;;
+      bootwifi=*)
+      if [ "${x#bootwifi=}" == "on" ]; then
+        echo "  Starting Wi-Fi... "
+        ifup eth0
+      fi
+      ;;
+      bootgraphics=*)
+      if [ "${x#bootgraphics=}" == "on" ]; then
+        echo -ne "  Starting Xorg... "
+        echo "done"
+      fi
+      ;;
+    esac
+  done
+#  [ $? = 0 ] && echo "OK" || echo "FAIL"
+}
+stop() {
+	printf "Stopping Neo Freerunner resources: "
+#	start-stop-daemon -K -q -p /var/run/dropbear.pid
+	[ $? = 0 ] && echo "OK" || echo "FAIL"
+}
+restart() {
+	stop
+	start
+}
+
+case "$1" in
+  start)
+  	start
+	;;
+  stop)
+  	stop
+	;;
+  restart|reload)
+  	restart
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?
