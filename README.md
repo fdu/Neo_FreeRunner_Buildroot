@@ -76,6 +76,19 @@ See complete instructions in [Configuring the boot splash screens](http://wiki.o
 
 The IP configuration for the USB gadget ethernet interface resides in `overlay/etc/network/interfaces`. A custom SSID and PSK for the wifi can be added in `overlay/etc/wpa_supplicant.conf`.
 
+### NAND U-Boot menu
+
+The default U-Boot environment can be loaded with `defaultenv`. Parameters can be passed from the boot loader to runtime with kernel parameters:
+
+```
+setenv menu_1 Boot from microSD (FAT+ext2): setenv bootargs ${bootargs_base} rootfstype=ext2 root=/dev/mmcblk0p2 rootdelay=5 ${mtdparts} ro\; mmcinit\; fatload mmc 1 0x32000000 ${sd_image_name}\; bootm 0x32000000
+setenv menu_4 Boot (USB host mode, Wi-Fi on, graphics off): setenv bootargs_base ${bootargs_base} bootwifi=on bootusb=host bootgraphics=off\; run bootcmd
+setenv menu_5 Boot (USB host mode, Wi-Fi on, graphics on): setenv bootargs_base ${bootargs_base} bootwifi=on bootusb=host bootgraphics=on\; run bootcmd
+setenv menu_6 Reboot: reset
+setenv menu_8 Power off: neo1973 power-off
+saveenv
+```
+
 ## Support
 
 :heavy_check_mark: Build kernel
