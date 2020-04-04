@@ -113,7 +113,9 @@ saveenv
 
 :heavy_check_mark: USB gadget (Ethernet)
 
-:heavy_check_mark: Wifi (WPA2/PSK)
+:heavy_check_mark: Wi-Fi STA (WPA2/PSK)
+
+:x: Wi-Fi AP (not supported in driver)
 
 :question: Bluetooth
 
@@ -133,7 +135,9 @@ saveenv
 
 :heavy_check_mark: Suspend to RAM (suspend with `echo mem > /sys/power/state`, resume with power button)
 
-:question: Real-time clock
+:question: Real-time clock (read / write)
+
+:question: Real-time clock (wake up)
 
 :heavy_check_mark: Audio on headset (`alsactl restore -f /etc/alsa/headset.state`)
 
