@@ -191,6 +191,7 @@ make[2]: warning: -j1 forced in submake: resetting jobserver mode.
   * Added U-Boot splash screen
   * Added U-Boot boot menu
   * Added custom boot scripts
+  * Added ALSA configurations for headset and speaker
 * 0.2
   * Buildroot 2020.02
   * Linux 3.2.99
