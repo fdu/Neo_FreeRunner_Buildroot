@@ -109,7 +109,7 @@ saveenv
 
 :heavy_check_mark: Backlight control
 
-:question: USB host
+:x: USB host (in /sys the interface to set USB host mode is there but the interface to set USB power is missing in the current kernel + configuration, see http://wiki.openmoko.org/wiki/USB_host)
 
 :heavy_check_mark: USB gadget (Ethernet)
 
