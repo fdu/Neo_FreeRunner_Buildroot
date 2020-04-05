@@ -131,7 +131,7 @@ saveenv
 
 :heavy_check_mark: Buttons (AUX on `/dev/input/event0`, power on `/dev/input/event2`)
 
-:heavy_plus_sign: Device power management (wifi, others not tested)
+:heavy_check_mark: Device power management (with `om` user space tool)
 
 :heavy_check_mark: Suspend to RAM (suspend with `echo mem > /sys/power/state`, resume with power button)
 
