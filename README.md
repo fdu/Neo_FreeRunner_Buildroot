@@ -147,11 +147,7 @@ saveenv
 
 ## Screenshots
 
-Splash
-
 ![Splash](doc/splash.png)
-
-Login
 
 ![Login](doc/login.png)
 
