@@ -190,6 +190,8 @@ make[2]: warning: -j1 forced in submake: resetting jobserver mode.
 ## Changelog
 
 * next
+  *
+* 0.3
   * Buildroot 2019.02
   * Linux 2.6.37
   * GCC 4.9.4
