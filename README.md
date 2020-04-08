@@ -147,9 +147,9 @@ saveenv
 
 ## Screenshots
 
-![Splash](doc/splash.png)
+![Screenshot splash](doc/splash.png)
 
-![Login](doc/login.png)
+![Screenshot login](doc/login.png)
 
 ## Unsolved issues
 
