@@ -24,11 +24,11 @@ flash:
 ifeq (, $(shell which dfu-util))
 	$(error "No dfu-util in path $(PATH)")
 else
-	dfu-util -a u-boot -R -D $(dir_buildroot)/output/images/u-boot.udfu
+	./$(dir_buildroot)/output/host/bin/dfu-util -a u-boot -R -D $(dir_buildroot)/output/images/u-boot.udfu
 	sleep 2
-	dfu-util -a kernel -R -D $(dir_buildroot)/output/images/uImage
+	./$(dir_buildroot)/output/host/bin/dfu-util -a kernel -R -D $(dir_buildroot)/output/images/uImage
 	sleep 2
-	dfu-util -a rootfs -R -D $(dir_buildroot)/output/images/rootfs.jffs2
+	./$(dir_buildroot)/output/host/bin/dfu-util -a rootfs -R -D $(dir_buildroot)/output/images/rootfs.jffs2
 endif
 
 splash:
@@ -37,7 +37,7 @@ splash:
 	curl https://raw.githubusercontent.com/openmoko/openmoko-svn/master/src/host/splash/splashimg.pl > $(dir_splash)/splashimg.pl
 	chmod +x $(dir_splash)/splashimg.pl
 	$(dir_splash)/splashimg.pl $(dir_splash)/System_boot.png | gzip -9 > $(dir_splash)/splash
-	dfu-util -a splash -R -D $(dir_splash)/splash
+	./$(dir_buildroot)/output/host/bin/dfu-util -a splash -R -D $(dir_splash)/splash
 
 clean:
 	rm -rf $(dir_buildroot) $(dir_download)

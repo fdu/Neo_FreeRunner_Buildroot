@@ -192,6 +192,8 @@ make[2]: warning: -j1 forced in submake: resetting jobserver mode.
   * Added U-Boot boot menu
   * Added custom boot scripts
   * Added ALSA configurations for headset and speaker
+  * Added FAT support
+  * Added dfu-util from Buildroot
 * 0.2
   * Buildroot 2020.02
   * Linux 3.2.99

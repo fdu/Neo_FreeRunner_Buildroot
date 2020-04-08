@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2019.02-ga9aaa3a-dirty Configuration
+# Buildroot 2019.02-g9ac4116-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_5=y
@@ -2669,7 +2669,7 @@ BR2_TARGET_UBOOT_FORMAT_UDFU=y
 # BR2_PACKAGE_HOST_CMAKE is not set
 # BR2_PACKAGE_HOST_CRAMFS is not set
 # BR2_PACKAGE_HOST_CRYPTSETUP is not set
-# BR2_PACKAGE_HOST_DFU_UTIL is not set
+BR2_PACKAGE_HOST_DFU_UTIL=y
 # BR2_PACKAGE_HOST_DOS2UNIX is not set
 # BR2_PACKAGE_HOST_DOSFSTOOLS is not set
 # BR2_PACKAGE_HOST_DTC is not set
