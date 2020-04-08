@@ -145,6 +145,14 @@ saveenv
 
 :question: Microphone
 
+## Screenshots
+
+Splash
+![Splash](doc/splash.png)
+
+Login
+![Login](doc/login.png)
+
 ## Unsolved issues
 
 ### Wrong kernel configuration
