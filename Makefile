@@ -40,4 +40,4 @@ splash:
 	./$(dir_buildroot)/output/host/bin/dfu-util -a splash -R -D $(dir_splash)/splash
 
 clean:
-	rm -rf $(dir_buildroot) $(dir_download)
+	rm -rf $(dir_buildroot) $(dir_download) $(dir_splash)
