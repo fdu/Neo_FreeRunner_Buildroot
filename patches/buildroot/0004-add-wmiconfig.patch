@@ -1,0 +1,10 @@
+--- buildroot/package/Config.in	2020-04-09 23:54:21.140881405 +0200
++++ buildroot/package/Config.in.new	2020-04-09 23:17:00.724690277 +0200
+@@ -544,6 +544,7 @@
+ 	source "package/w_scan/Config.in"
+ 	source "package/wf111/Config.in"
+ 	source "package/wipe/Config.in"
++	source "package/wmiconfig/Config.in"
+ 	source "package/xorriso/Config.in"
+ 	source "package/xr819-xradio/Config.in"
+ endmenu
