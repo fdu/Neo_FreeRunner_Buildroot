@@ -12,8 +12,8 @@ bootstrap:
 	mkdir -p $(dir_buildroot)
 	curl $(url_buildroot) > $(dir_download)/$(archive_buildroot)
 	mkdir -p $(dir_patches_kernel)
-	curl https://raw.githubusercontent.com/shr-distribution/meta-smartphone/gta02-2.6.34/meta-openmoko/recipes-kernel/linux/linux-2.6.34/openmoko.patch > $(dir_patches_kernel)/openmoko.patch
-	curl https://raw.githubusercontent.com/shr-distribution/meta-smartphone/gta02-2.6.34/meta-openmoko/recipes-kernel/linux/linux-2.6.34/shr.patch > $(dir_patches_kernel)/shr.patch
+	curl https://raw.githubusercontent.com/shr-distribution/meta-smartphone/gta02-2.6.34/meta-openmoko/recipes-kernel/linux/linux-2.6.39/openmoko.patch > $(dir_patches_kernel)/openmoko.patch
+	curl https://raw.githubusercontent.com/shr-distribution/meta-smartphone/gta02-2.6.34/meta-openmoko/recipes-kernel/linux/linux-2.6.39/shr.patch > $(dir_patches_kernel)/shr.patch
 	tar zxf $(dir_download)/$(archive_buildroot) -C $(dir_buildroot) --strip-components=1
 	cp $(dir_configs)/buildroot $(dir_buildroot)/.config
 	ln -s `pwd`/omhacks $(dir_buildroot)/package/omhacks
