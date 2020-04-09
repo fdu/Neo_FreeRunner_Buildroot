@@ -7,6 +7,7 @@ dir_patches = patches
 dir_patches_kernel = $(dir_patches)/kernel
 dir_splash = splash
 dir_overlay = overlay
+dir_overlay_media = $(dir_patches)/media
 
 bootstrap:
 	mkdir -p $(dir_download)
@@ -15,7 +16,9 @@ bootstrap:
 	mkdir -p $(dir_patches_kernel)
 	curl https://raw.githubusercontent.com/shr-distribution/meta-smartphone/gta02-2.6.34/meta-openmoko/recipes-kernel/linux/linux-2.6.39/openmoko.patch > $(dir_patches_kernel)/openmoko.patch
 	curl https://raw.githubusercontent.com/shr-distribution/meta-smartphone/gta02-2.6.34/meta-openmoko/recipes-kernel/linux/linux-2.6.39/shr.patch > $(dir_patches_kernel)/shr.patch
-	curl http://wiki.openmoko.org/images/c/c2/System_boot.png > $(dir_overlay)/System_boot.png
+	mkdir -p $(dir_overlay_media)
+	curl http://wiki.openmoko.org/images/c/c2/System_boot.png > $(dir_overlay_media)/System_boot.png
+	curl https://www.nch.com.au/acm/8k16bitpcm.wav > $(dir_overlay_media)/8k16bitpcm.wav
 	tar zxf $(dir_download)/$(archive_buildroot) -C $(dir_buildroot) --strip-components=1
 	cp $(dir_configs)/buildroot $(dir_buildroot)/.config
 	ln -s `pwd`/omhacks $(dir_buildroot)/package/omhacks
@@ -45,4 +48,4 @@ splash:
 	./$(dir_buildroot)/output/host/bin/dfu-util -a splash -R -D $(dir_splash)/splash
 
 clean:
-	rm -rf $(dir_buildroot) $(dir_download) $(dir_splash) $(dir_patches_kernel)
+	rm -rf $(dir_buildroot) $(dir_download) $(dir_splash) $(dir_patches_kernel) $(dir_overlay_media)
