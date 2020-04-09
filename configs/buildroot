@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2019.02-ge7662cb-dirty Configuration
+# Buildroot 2019.02-g69b5402 Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_5=y
@@ -561,7 +561,7 @@ BR2_PACKAGE_KODI_ARCH_SUPPORTS=y
 # mpd needs a toolchain not affected by GCC bug 64735
 #
 # BR2_PACKAGE_MPD_MPC is not set
-# BR2_PACKAGE_MPG123 is not set
+BR2_PACKAGE_MPG123=y
 # BR2_PACKAGE_MPV is not set
 # BR2_PACKAGE_MULTICAT is not set
 # BR2_PACKAGE_MUSEPACK is not set
