@@ -7,7 +7,8 @@ start() {
     case "$x" in
       bootusb=*)
       echo -ne "  Setting USB mode to ${x#bootusb=}... "
-      om usb mode ${x#bootusb=}
+      echo 1 > /sys/devices/platform/s3c2440-i2c/i2c-0/0-0073/pcf50633-gpio/reg-fixed-voltage.2/gta02-pm-usbhost.0/power_on
+      echo host > /sys/devices/platform/s3c2410-ohci/usb_mode
       echo "done"
       ;;
       bootwifi=*)
