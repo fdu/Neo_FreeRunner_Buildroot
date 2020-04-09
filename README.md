@@ -113,13 +113,11 @@ saveenv
 
 :heavy_check_mark: USB gadget (Ethernet)
 
-:heavy_check_mark: Wi-Fi STA (WPA2/PSK)
-
-:x: Wi-Fi AP (not supported in driver)
+:heavy_check_mark: Wi-Fi WPA2/PSK (STA, AP not supported in driver)
 
 :question: Bluetooth
 
-:heavy_check_mark: GPS (NMEA messages coming on `/dev/s3c2410_serial1`, gpsd working)
+:heavy_check_mark: GPS (NMEA messages coming on `/dev/ttySAC1`, gpsd working)
 
 :heavy_check_mark: SD card
 
