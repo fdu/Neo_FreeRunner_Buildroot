@@ -190,6 +190,7 @@ make[2]: warning: -j1 forced in submake: resetting jobserver mode.
 * next
   * Switched to Linux 2.6.39 from SHR
   * Move kernel features to modules loaded at boot
+  * Add [wmiconfig](https://github.com/openmoko/openmoko-svn/tree/master/src/target/AR6kSDK.build_sw.18/host/tools/wmiconfig)
 * 0.3
   * Buildroot 2019.02
   * Linux 2.6.37

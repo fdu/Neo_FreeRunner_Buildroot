@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2019.02-g69b5402 Configuration
+# Buildroot 2019.02-g69b5402-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_5=y
@@ -1147,6 +1147,7 @@ BR2_PACKAGE_SEDUTIL_ARCH_SUPPORTS=y
 # w_scan needs a toolchain w/ headers >= 3.7
 #
 # BR2_PACKAGE_WIPE is not set
+BR2_PACKAGE_WMICONFIG=y
 # BR2_PACKAGE_XORRISO is not set
 # BR2_PACKAGE_XR819_XRADIO is not set
 

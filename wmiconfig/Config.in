@@ -1,0 +1,4 @@
+config BR2_PACKAGE_WMICONFIG
+  bool "wmiconfig"
+  help
+    wmiconfig is a tool written by Atheros Communications Inc to configure the Ar6k WIFI chip used in the Neo Freerunner.

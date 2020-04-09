@@ -22,9 +22,11 @@ bootstrap:
 	tar zxf $(dir_download)/$(archive_buildroot) -C $(dir_buildroot) --strip-components=1
 	cp $(dir_configs)/buildroot $(dir_buildroot)/.config
 	ln -s `pwd`/omhacks $(dir_buildroot)/package/omhacks
+	ln -s `pwd`/wmiconfig $(dir_buildroot)/package/wmiconfig
 	patch -p0 < $(dir_patches)/buildroot/0001-add-omhacks.patch
 	patch -p0 < $(dir_patches)/buildroot/0002-fbdev-5.0.patch
 	patch -p0 < $(dir_patches)/buildroot/0003-uboot-udfu.patch
+	patch -p0 < $(dir_patches)/buildroot/0004-add-wmiconfig.patch
 
 build:
 	$(MAKE) -j`nproc` -C $(dir_buildroot)
