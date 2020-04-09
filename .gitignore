@@ -2,3 +2,4 @@ buildroot
 downloads
 patches/kernel
 splash
+overlay/media
