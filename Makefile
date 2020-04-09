@@ -7,7 +7,7 @@ dir_patches = patches
 dir_patches_kernel = $(dir_patches)/kernel
 dir_splash = splash
 dir_overlay = overlay
-dir_overlay_media = $(dir_patches)/media
+dir_overlay_media = $(dir_overlay)/media
 
 bootstrap:
 	mkdir -p $(dir_download)
