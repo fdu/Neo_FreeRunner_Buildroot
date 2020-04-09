@@ -190,7 +190,7 @@ make[2]: warning: -j1 forced in submake: resetting jobserver mode.
 ## Changelog
 
 * next
-  *
+  * Switched to Linux 2.6.34 from SHR
 * 0.3
   * Buildroot 2019.02
   * Linux 2.6.37
