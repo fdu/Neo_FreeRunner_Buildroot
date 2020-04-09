@@ -6,6 +6,7 @@ dir_buildroot = buildroot
 dir_patches = patches
 dir_patches_kernel = $(dir_patches)/kernel
 dir_splash = splash
+dir_overlay = overlay
 
 bootstrap:
 	mkdir -p $(dir_download)
@@ -14,6 +15,7 @@ bootstrap:
 	mkdir -p $(dir_patches_kernel)
 	curl https://raw.githubusercontent.com/shr-distribution/meta-smartphone/gta02-2.6.34/meta-openmoko/recipes-kernel/linux/linux-2.6.39/openmoko.patch > $(dir_patches_kernel)/openmoko.patch
 	curl https://raw.githubusercontent.com/shr-distribution/meta-smartphone/gta02-2.6.34/meta-openmoko/recipes-kernel/linux/linux-2.6.39/shr.patch > $(dir_patches_kernel)/shr.patch
+	curl http://wiki.openmoko.org/images/c/c2/System_boot.png > $(dir_overlay)/System_boot.png
 	tar zxf $(dir_download)/$(archive_buildroot) -C $(dir_buildroot) --strip-components=1
 	cp $(dir_configs)/buildroot $(dir_buildroot)/.config
 	ln -s `pwd`/omhacks $(dir_buildroot)/package/omhacks
@@ -37,10 +39,9 @@ endif
 
 splash:
 	mkdir -p $(dir_splash)
-	curl http://wiki.openmoko.org/images/c/c2/System_boot.png > $(dir_splash)/System_boot.png
 	curl https://raw.githubusercontent.com/openmoko/openmoko-svn/master/src/host/splash/splashimg.pl > $(dir_splash)/splashimg.pl
 	chmod +x $(dir_splash)/splashimg.pl
-	$(dir_splash)/splashimg.pl $(dir_splash)/System_boot.png | gzip -9 > $(dir_splash)/splash
+	$(dir_splash)/splashimg.pl $(dir_overlay)/System_boot.png | gzip -9 > $(dir_splash)/splash
 	./$(dir_buildroot)/output/host/bin/dfu-util -a splash -R -D $(dir_splash)/splash
 
 clean:
