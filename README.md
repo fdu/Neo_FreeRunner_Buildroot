@@ -121,7 +121,7 @@ saveenv
 
 :heavy_check_mark: SD card
 
-:question: 3D accelerometers
+:heavy_check_mark: Accelerometers (`/dev/input/event3`, test code [here](http://wiki.openmoko.org/wiki/Accelerometer_data_retrieval))
 
 :heavy_check_mark: LEDs
 
@@ -133,9 +133,7 @@ saveenv
 
 :heavy_check_mark: Suspend to RAM (suspend with `echo mem > /sys/power/state`, resume with power button)
 
-:question: Real-time clock (read / write)
-
-:question: Real-time clock (wake up)
+:heavy_check_mark: Real-time clock
 
 :heavy_check_mark: Audio on headset (`alsactl restore -f /etc/alsa/headset.state`)
 
