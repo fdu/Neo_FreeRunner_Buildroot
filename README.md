@@ -115,7 +115,7 @@ saveenv
 
 :heavy_check_mark: Wi-Fi WPA2/PSK (STA, AP not supported in driver)
 
-:question: Bluetooth
+:heavy_check_mark: Bluetooth (USB host mode then `echo 1 > /sys/bus/platform/drivers/gta02-pm-bt/gta02-pm-bt.0/power_on` then `hciconfig hci0 up` then `hcitool scan`)
 
 :heavy_check_mark: GPS (NMEA messages coming on `/dev/ttySAC1`, gpsd working)
 
